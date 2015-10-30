@@ -258,7 +258,7 @@ function vc_woocommerce_header_cart_fragments( $fragments ) {
 
 add_filter('add_to_cart_fragments', 'vc_woocommerce_header_cart_fragments');
 
-
+// -----------------------------------------------------------------------------
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
 if (!function_exists('loop_columns')) {
@@ -280,7 +280,7 @@ add_filter( 'yith-wcwl-browse-wishlist-label', 'edit_browse_wishlist_label' );
 
 
 
-// Add 'Ref: ' to SKUs
+/* Add 'Ref: ' to SKUs
 function ref_woocommerce_get_sku( $sku, $instance ) {
 
     if ( ! is_admin() ) {
@@ -289,7 +289,7 @@ function ref_woocommerce_get_sku( $sku, $instance ) {
     return $sku;
 }
 
-add_filter( 'woocommerce_get_sku', 'ref_woocommerce_get_sku', 10, 2 );
+add_filter( 'woocommerce_get_sku', 'ref_woocommerce_get_sku', 10, 2 ); */
 
 /** to change the position of excerpt **/
 remove_action('woocommerce_single_product_summary', 'woocommerce_get_sku', 20 );
@@ -299,7 +299,40 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_get_sku', 6 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
 
+add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
+add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
+add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
+ 
+ // -----------------------------------------------------------------------------
+/**
+* Returns max price for grouped products
+**/
+function wc_grouped_price_html( $price, $product ) {
+	$all_prices = array();
 
+	foreach ( $product->get_children() as $child_id ) {
+		$all_prices[] = get_post_meta( $child_id, '_price', true );
+	}
+
+	if ( ! empty( $all_prices ) ) {
+		$max_price = max( $all_prices );
+	} else {
+		$max_price = '';
+	}
+
+	$price = '<span class="from">' . _x('From:', 'max_price', 'woocommerce') . ' </span>' . woocommerce_price( $max_price );
+
+	return $price;
+}
+add_filter( 'woocommerce_grouped_price_html', 'wc_grouped_price_html', 10, 2 );
+
+/**
+ * Hides the 'Free!' price notice
+ */
+function hide_free_price_notice( $price ) {
+ 
+  return '';
+}
 // Disable Reviews tab
 
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );

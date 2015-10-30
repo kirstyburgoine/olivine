@@ -24,7 +24,11 @@ if ( have_posts() ) : the_post();  ?>
 
 		<div class="col-xs-12 col-md-9">
 
+			<div class="entry-content">
+
 			<?php the_content(); ?>
+
+			</div>
 
 		</div>
 

@@ -134,8 +134,9 @@ pre { // USed on product categories
 body {
 	.gform_wrapper {
 
-		label.gfield_label + div.ginput_container {
-			margin-bottom: 1.25em;
+		label.gfield_label + div.ginput_container,
+		label.gfield_label + div.gfield_description + div.ginput_container {
+			margin-bottom: 1.75em;
 		}
 
 		input[type=text], 
@@ -417,7 +418,7 @@ body {
 // Defaults - changes of colours etc.
 
 .woocommerce div.product p.price, 
-.woocommerce div.product span.price { color: $gray-dark; }
+.woocommerce div.product span.price { color: $gray-dark!important; }
 
 //-------------------------------------------------------------------
 
@@ -471,6 +472,62 @@ body {
 	text-align: center;
 }
 
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt {
+	background-color: $brand-primary!important;
+
+	&:hover { background-color: $gray_20!important; }
+}
+
+
+
+
+/* add to basket / board buttons on each product */
+.entry-summary {
+
+	div[itemprop="description"] table {
+		td { padding-bottom: 0.3em; }
+	}
+
+	table {
+		
+	
+		&.group_table {
+			margin: 2em 0; 
+
+			tr {
+				
+				
+
+				
+			}
+		}
+	}
+
+
+
+	button,
+	a.button {
+		text-transform: uppercase;
+		width: 300px;
+		text-align: center;
+
+		&.wl-add-but {
+			background: $gray_46!important;
+			text-shadow: 0!important;
+			font-weight: 500;
+			color: $white!important; 
+
+			&:hover { background: $gray_20!important; }
+		}
+
+		&:hover { background: $gray_20!important; }
+	}
+}
+
+
 .related {
 	.type-product {
 		border: solid 1px $gray_76;
@@ -482,12 +539,15 @@ body {
 			text-transform: uppercase;
 			color: $gray_46;
 			font-weight: 600;
+			padding: 1em!important;
 
 			&:hover { 
 				color: $gray_20;
 				text-decoration: underline;
 			}
 		}
+
+		img { margin:0!important; }
 
 	}
 }
@@ -686,18 +746,30 @@ body {
   -webkit-box-shadow: 0px 0px 20px 0px rgba(000, 000, 000, .2);
   box-shadow: 0px 0px 20px 0px rgba(000, 000, 000, .2);
 
+  width: 250px;
+  text-align: left;
+  padding: 0 0.75em 0.75em 0;
 
+
+
+  
   .quantity {
    
     //padding: .5em;
   }
 
-  p.total { text-align: right;  padding: 0.5em; }
+  p.total { float: right; text-align: right;  padding: 0.5em; }
+  p.buttons {
+ 	float: right;
+  	clear: right;
+  	a { padding: 0.5em;}
+  }
 
   ul.cart_list { list-style-type: none; margin: 0; padding: 0; }
   ul.cart_list li { display: block; clear: left; padding: .5em; margin-bottom: .5em; }
   ul.cart_list li:nth-child(even) { }
   ul.cart_list li a { padding: 0; font-weight: 400; }
+  ul.cart_list li a.remove { float: left; }
   ul.cart_list li img { width: 50px; max-width: 50px; height: auto; float: left; margin-right: 0.5em; }
   ul.cart_list .quantity {  }
 

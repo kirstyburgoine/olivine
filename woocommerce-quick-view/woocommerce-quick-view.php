@@ -145,7 +145,9 @@ if ( is_woocommerce_active() ) {
 					case 'thumbnail' :
 						
 							$selector = "'a.quick-view-image'";
-							add_filter( 'the_permalink', array( $this, 'get_quick_view_url' ) );
+							if (is_shop() || is_product_category() ) : 
+								add_filter( 'the_permalink', array( $this, 'get_quick_view_url' ) );
+							endif;
 						
 					break;
 					default :

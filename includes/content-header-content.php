@@ -16,11 +16,7 @@
 
         </div>
 
-        <?php
-        if ( function_exists( 'woocommerce_product_search' ) ) {
-            echo woocommerce_product_search( array( 'limit' => 20 ) );
-        }
-        ?>
+
 
     </div>
 
@@ -65,7 +61,13 @@
                 'theme_location' => 'primary',
                 'walker' => new wp_bootstrap_navwalker()
                 ) 
-            ); ?>            
+            ); ?>    
+
+            <?php
+            if ( function_exists( 'woocommerce_product_search' ) ) {
+                echo woocommerce_product_search( array( 'limit' => 20, 'submit_button' => 'Yes', 'submit_button_label' => 'Go' ) );
+            }
+            ?>        
             </div>
 
         </div>

@@ -296,6 +296,41 @@ body {
 .product-search {
 	float: right;
 	clear: right;
+	top: 6px!important;
+	width: 175px;
+
+	input[type="text"].product-search-field { 
+		width: 80%!important; 
+		font-size: $font-size-small;
+		padding: 0.2em 0.5em 0.1em 0.5em;
+	}
+
+	button { 
+		width: 16%; 
+		color: $white;
+		border: none;
+		border-radius: 0!important;
+		padding-top: 0.2em;
+		text-indent: -9999px;
+		background: $gray_46 url(../img/search.png) no-repeat center;
+			
+		&:hover { 
+			background-color: $gray_20;
+		}
+
+	}
+
+	.product-search-results {
+		.entry {
+			td.product-image {
+				.thumbnail { margin-bottom: 0; }
+			}
+			td.category-info,
+			td.product-info {
+				a { color: $gray_46; text-transform: capitalize; font-size: $font-size-small; }
+			}
+		}
+	}
 }
 
 //---------------------------------------------------------
@@ -558,6 +593,22 @@ body {
 
 //-------------------------------------------------------------------------
 //-------------------------------------------------------------------------
+// Extra Pagination Stuff
+
+.sb-infinite-scroll-load-more {
+	a {
+		background-color: $brand-primary;
+		color: $white;
+		border: none!important;
+		margin-bottom: 2em!important;
+		padding: 0.5em 1em!important;
+
+		&:hover { background-color: $gray_20; }
+	}
+}
+
+//-------------------------------------------------------------------------
+//-------------------------------------------------------------------------
 // Footer Stuff
 
 .site-footer {
@@ -586,12 +637,14 @@ body {
 			}
 		}
 
+		input[type=text] { font-size: $font-size-small!important; padding: 0.3em 0.5em 0.4em; }
+
 		.gform_button {
 			background: $gray_46;
 			color: $white;
 			border: none;
 			width: 97.5%;
-			padding: 3px 0;
+			padding: 0.3em 0.5em;
 			white-space: nowrap;
 		    font-size: 14px;
 		    line-height: 1.42857;
