@@ -3265,7 +3265,7 @@ input[type="button"].btn-block {
     float: left; } }
 
 .navbar-collapse {
-  max-height: 340px;
+  max-height: auto;
   overflow-x: visible;
   padding-right: 15px;
   padding-left: 15px;

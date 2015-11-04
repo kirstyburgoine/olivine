@@ -19,6 +19,7 @@
                     
                 $main_image = get_sub_field('main_image');
                 $strapline = get_sub_field('strapline'); 
+                $strapline_colour = get_sub_field('strapline_colour'); 
                 $button_text = get_sub_field('button_text'); 
                 $button_link = get_sub_field('button_link');  ?>
 
@@ -26,7 +27,10 @@
 
                     <img src="<?php echo $main_image['sizes']['carousel-image'];?>" alt="" />
 
-                    <a href="<?php echo $button_link; ?>" class="btn btn-large"><?php echo $button_text; ?></a>
+                    <div class="carousel-content">
+                        <h1 <?php if ($strapline_colour) : echo 'class="'.strtolower($strapline_colour).'"'; endif; ?>><?php echo $strapline; ?></h1>
+                        <a href="<?php echo $button_link; ?>" class="btn btn-large"><?php echo $button_text; ?></a>
+                    </div>
 
                 </div>
 

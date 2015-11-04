@@ -1,6 +1,6 @@
 <div class="row">
 
-	<div class="col-md-3 first widget-area" role="complementary">
+	<div class="col-md-3 first widget-area mobTab-display-none" role="complementary">
 
 		<aside class="widget">
 
@@ -91,16 +91,14 @@
 		<?php get_template_part('includes/content', 'social-menu'); ?>
 		</aside>
 
-		<aside class="widget">
 
-			<h3 class="widget-title"></h3>
 
 			<?php 
 			if ( is_active_sidebar( 'sidebar-9' ) ) : 
 				dynamic_sidebar( 'sidebar-9' ); 
 			endif; ?>
 
-		</aside>
+
 
 	</div>
 

@@ -27,7 +27,7 @@ function basetheme_setup() {
 
 	add_image_size('carousel-image', 1170, 665, TRUE);
 	add_image_size('home-image-landscape', 555, 354, TRUE);
-	add_image_size('home-image-portrait', 555, 720, TRUE);
+	add_image_size('home-image-portrait', 555, 704, TRUE);
 
 
 
@@ -48,6 +48,7 @@ function basetheme_setup() {
 }
 endif; // basetheme_setup
 add_action( 'after_setup_theme', 'basetheme_setup' );
+
 
 
 require_once('wp_bootstrap_navwalker.php');

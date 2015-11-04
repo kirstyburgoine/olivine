@@ -161,6 +161,23 @@ body {
 				margin-right: 2.5%;
 			}
 		}
+
+		.gform_button {
+			background: $gray_46;
+			color: $white;
+			border: none;
+			padding: 0.3em 1em;
+			white-space: nowrap;
+		    font-size: 14px;
+		    line-height: 1.42857;
+			margin: 0!important;
+			text-transform: uppercase;
+
+			&:hover {
+				background-color: $gray_20;
+				color: $white;
+			}
+		}
 	}
 }
 
@@ -265,6 +282,27 @@ body {
 			&.rpwe-ul {
 				li { border-bottom: none!important; }
 			}
+		}
+
+		.wl-row { // Boards in Lookbook area
+
+			border-top: solid 2px $gray_76;
+
+			h3 { 
+				text-transform: uppercase;
+				a { color: $gray_20; }
+			}
+
+			.button {
+				padding: .3em 1em;
+				background-color: $gray_76!important;
+				color: $white!important;
+
+				&:hover {
+					background-color: $gray_20!important;
+				}
+			}
+
 		}
 
 	}
@@ -728,6 +766,8 @@ body {
 // -------------------------------------------------------------------------------------------------------------
 /* Cart that displays on hover*/
 
+
+
 .woocommerce .dropdown_widget_cart,
 .woocommerce-page .dropdown_widget_cart, 
 .home .dropdown_widget_cart,
@@ -748,7 +788,7 @@ body {
 
   width: 250px;
   text-align: left;
-  padding: 0 0.75em 0.75em 0;
+  padding: .5em 1em .5em 0;
 
 
 
@@ -758,18 +798,27 @@ body {
     //padding: .5em;
   }
 
-  p.total { float: right; text-align: right;  padding: 0.5em; }
+  p.total { background: $white_smoke; width: 95%; float: right; text-align: right;  padding: 0.5em; }
   p.buttons {
+
+  	margin: 1em 0;
  	float: right;
   	clear: right;
-  	a { padding: 0.5em;}
+
+  	a { 
+  		padding: 0.5em;
+  		background: $brand-primary;
+  		color: $white;
+
+  	}
+
   }
 
   ul.cart_list { list-style-type: none; margin: 0; padding: 0; }
   ul.cart_list li { display: block; clear: left; padding: .5em; margin-bottom: .5em; }
   ul.cart_list li:nth-child(even) { }
   ul.cart_list li a { padding: 0; font-weight: 400; }
-  ul.cart_list li a.remove { float: left; }
+  ul.cart_list li a.remove { float: left; margin-right: 1em; }
   ul.cart_list li img { width: 50px; max-width: 50px; height: auto; float: left; margin-right: 0.5em; }
   ul.cart_list .quantity {  }
 
