@@ -21,7 +21,7 @@
 		<div class="container">
 						
 				
-				<p class="alignleft">© <?php echo date('Y'); ?> ~ <?php if ( $copyright_notice ) : echo $copyright_notice; else : ?><?php bloginfo('name'); endif;?>. <?php if ( $company_number ) : ?>Registered in England & Wales. Company No:<?php echo $company_number; endif;?>. Trademarks and brands are the property of their respective owners.</p>
+				<p class="alignleft">© <?php echo date('Y'); ?> ~ <?php if ( $copyright_notice ) : echo $copyright_notice; else : ?><?php bloginfo('name'); endif;?>. <?php if ( $company_number ) : ?>Registered in England & Wales. Company No:<?php echo $company_number; endif;?>. <?php if ( $vat_number ) : ?>VAT No:<?php echo $vat_number; endif;?>. Trademarks and brands are the property of their respective owners.</p>
 
 			<div class="seperator"></div>
 

@@ -8,12 +8,14 @@
 
    	//echo $termid;
 
-	if ( $termid->parent == '24') :
+   	// If the lookbooks category or is a page
+	if ( $termid->parent == '24' || is_page() ) :
 		
 		if ( is_active_sidebar( 'sidebar-11' ) ) : 
 			dynamic_sidebar( 'sidebar-11' ); 
 		endif; 
 
+	// else if its the main products section
 	elseif ( is_shop() ) : 
 
 		if ( is_active_sidebar( 'sidebar-10' ) ) : 

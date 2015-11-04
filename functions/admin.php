@@ -101,9 +101,9 @@ function basetheme_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Lookbooks Sidebar', 'basetheme' ),
+		'name'          => __( 'Lookbooks / Pages Sidebar', 'basetheme' ),
 		'id'            => 'sidebar-11',
-		'description'   => __( 'Sidebar that appears on the right of the lookbooks product category archives. Originally used to show Our Boards', 'basetheme' ),
+		'description'   => __( 'Sidebar that appears on the right of the lookbooks product category archives and standard pages. Originally used to show Our Boards', 'basetheme' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',

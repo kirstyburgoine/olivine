@@ -288,11 +288,6 @@ body {
 
 			border-top: solid 2px $gray_76;
 
-			h3 { 
-				text-transform: uppercase;
-				a { color: $gray_20; }
-			}
-
 			.button {
 				padding: .3em 1em;
 				background-color: $gray_76!important;
@@ -300,6 +295,26 @@ body {
 
 				&:hover {
 					background-color: $gray_20!important;
+				}
+			}
+
+			.board {
+				border-top: solid 2px $gray_76;
+				clear: both;
+				margin-bottom: 30px;
+
+				h3 { 
+					text-transform: uppercase;
+					a { color: $gray_20; }
+				}
+
+				
+
+				.product-thumbnail {
+					margin: 10px 10px 0 0;
+					float: left;
+
+					&:nth-child(3) { margin-right: 0; }
 				}
 			}
 
@@ -718,11 +733,23 @@ body {
 			    	 width: 32%!important;
 			    }
 
-			    img { margin: 0!important; }
+			    a { 
+					display: block; 
+					background: $white;
 
-			    h3 { margin: 1em!important; }
-			    
+				    img { 
+				    	margin: 0!important; 
+				   		@include transition(10);
+					}
 
+
+			    	h3 { margin: 1em!important; }
+				    
+				    &:hover { 
+						@include transition(10);
+						img { opacity: 0.5;  }
+					}
+				}
 			}
 
 		}

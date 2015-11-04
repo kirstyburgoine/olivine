@@ -321,7 +321,7 @@ function wc_grouped_price_html( $price, $product ) {
 		$max_price = '';
 	}
 
-	$price = '<span class="from">' . _x('From:', 'max_price', 'woocommerce') . ' </span>' . woocommerce_price( $max_price );
+	$price = woocommerce_price( $max_price );
 
 	return $price;
 }
@@ -332,7 +332,7 @@ add_filter( 'woocommerce_grouped_price_html', 'wc_grouped_price_html', 10, 2 );
  */
 function hide_free_price_notice( $price ) {
  
-  return '';
+  return '0.00';
 }
 // Disable Reviews tab
 
