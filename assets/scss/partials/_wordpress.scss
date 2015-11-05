@@ -126,6 +126,98 @@ pre { // USed on product categories
 }
 
 
+//---------------------------------------------------------
+//---------------------------------------------------------
+// New drop down menus stuff
+
+nav.widgetized-nav .main-nav > li > a, 
+nav.widgetized-nav .main-nav .sub-menu.non-wgt-menu a {
+	text-transform: uppercase;
+	font-weight:600;
+}
+
+@media screen and (min-width: 600px) {
+	nav.widgetized-nav .main-nav li:first-child a { padding-left:0; }
+}
+
+@media screen and (min-width: 900px) {
+	nav.widgetized-nav .main-nav .sub-menu.widgetized-menu { 
+		max-width: 1140px!important; 
+	}
+}
+
+.widgetized-menu {
+
+	.menu-item {
+		position: relative;
+		background: $black;
+		margin-bottom: 10px;
+		@include transition(10);  
+		height: auto;
+
+		img { 
+			position: relative;
+			margin: 0!important; 
+			padding-right:0!important;
+			width: 100%;
+		}
+
+		.menu-image-title { 
+			position: absolute;
+			z-index: 700;
+			width: auto;
+			height: 20%;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			text-transform: uppercase;
+			text-align: center;
+			overflow: auto;
+			margin: auto;
+		}
+
+		&:hover {
+
+			@include transition(10);
+	
+			
+			img { opacity: 0.5;  }
+
+			
+		}
+
+	}
+
+	.btn {
+    width: 100%;
+    max-width: 165px;
+    background-color: $brand-primary;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+	}
+
+}
+
+.widgetized-menu-button {
+
+	background: $gray_76;
+	margin: 15px 10px;
+	
+
+		@media screen and (max-width: 899px) {
+
+			text-align: center!important; 
+			color: $white;
+
+			.menu-item-title { display: block!important; }
+			
+		}
+	
+}
+
+.widgetized-menu-button 
 
 //---------------------------------------------------------
 //---------------------------------------------------------
@@ -207,13 +299,19 @@ body {
 		width: 100%;
 
 		@media screen and (min-width: $screen-sm) {
+			width: 100%;
+
+			
+		}
+
+		@media screen and (min-width: $screen-md) {
 			width: 48%;
 			float: left;
 
 			&:nth-child(even) { margin-left: 2%; }
 		}
 
-		@media screen and (min-width: $screen-md) {
+		@media screen and (min-width: $screen-lg) {
 			width: 100%;
 			float: none;
 
@@ -320,6 +418,8 @@ body {
 
 		}
 
+		&.widget_text { margin-bottom: 10px; }
+		// standard margin removed on text widget as used as widget headers and need to display closer on product filters
 	}
 
 	// USed in sidebar
@@ -351,6 +451,24 @@ body {
 			}
 		}
 	}
+
+	// Product filters in sidevar
+	.widget_layered_nav {
+
+		input { margin-right: 5px; }
+		h3.widget-title { display: none;}
+	}
+
+	#sod_ajax_layered_nav-3 {
+		-moz-column-count: 2;
+	    -moz-column-gap: 20px;
+	    -webkit-column-count: 2;
+	    -webkit-column-gap: 20px;
+	    column-count: 2;
+	    column-gap: 20px;
+	}
+
+	
 
 }
 
@@ -392,6 +510,15 @@ body {
 	font-family: $font-family-sans-serif;
 	font-size: 12px;
 	padding: 10px 0;
+
+
+		h3.widget-title {
+			font-size: $font-size-base;
+			text-transform: uppercase;
+			padding-bottom: 0.35em;
+			margin: 0;
+			font-weight: 600;
+		}
 }
 
 
@@ -721,7 +848,7 @@ body {
 
 				
 			    float: left;
-			    margin: 0 1.2em 1.2em 0!important;
+			    margin: 0 2% 1.2em 0!important;
 			    //margin: 0 2% 1em 0!important;
 			    padding: 0;
 			    position: relative;
@@ -731,6 +858,10 @@ body {
 
 			    @media screen and (min-width: $screen-sm) {
 			    	 width: 32%!important;
+			    }
+
+			    @media screen and (min-width: $screen-lg) {
+			    	margin: 0 1.2em 1.2em 0!important;
 			    }
 
 			    a { 

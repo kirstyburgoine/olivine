@@ -309,9 +309,11 @@ body {
 .product-search {
 
 	top: 6px!important;
+	left: auto!important;
 	width: 175px;
+	margin: 0 auto; 
 
-	@media screen and (min-width: $grid-float-breakpoint) {
+	@media screen and (min-width: $screen-lg) {
 		float: right;
 		clear: right;
 	}
@@ -469,6 +471,12 @@ body {
 // Additional Sitenav stuff
 
 .site-navigation {
+
+	.navbar-container {
+		@media screen and (min-width: $screen-md) {
+			border-bottom: solid 1px $gray_76;
+		}
+	}
 
 
 	.navbar-collapse {
@@ -702,12 +710,14 @@ body {
 // Footer Stuff
 
 .site-footer {
-	background: $white_smoke;
+	//background: $white_smoke;
 	text-align: center;
 
 	@media screen and (min-width: $screen-sm) {
 		text-align: left;
 	}
+
+	.border-top { border-top: solid 1px $gray_76; }
 
 .widget-area.third {
 

@@ -46,15 +46,31 @@ get_header( 'shop' ); ?>
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 
 			<div class="meta">
-			<?php
-				/**
-				 * woocommerce_before_shop_loop hook
-				 *
-				 * @hooked woocommerce_result_count - 20
-				 * @hooked woocommerce_catalog_ordering - 30
-				 */
-				do_action( 'woocommerce_before_shop_loop' );
-			?>
+
+				<div class="row">
+
+					<div class="col-xs-12 col-sm-4 col-md-3">
+
+					<h3 class="widget-title">REFINE BY</h3>
+
+					</div>
+
+					<div class="col-xs-12 col-md-8 col-md-9 archive-products">
+
+					<?php
+						/**
+						 * woocommerce_before_shop_loop hook
+						 *
+						 * @hooked woocommerce_result_count - 20
+						 * @hooked woocommerce_catalog_ordering - 30
+						 */
+						do_action( 'woocommerce_before_shop_loop' );
+					?>
+
+					</div>
+
+				</div>	
+
 			<div class="seperator"></div>
 			</div>
 
@@ -65,7 +81,7 @@ get_header( 'shop' ); ?>
 
 	<div class="row">
 
-		<div class="col-xs-12 col-sm-6 col-md-3">
+		<div class="col-xs-12 col-sm-4 col-md-3">
 
 		<?php
 			/**
@@ -79,7 +95,7 @@ get_header( 'shop' ); ?>
 		</div>
 
 
-		<div class="col-xs-12 col-md-9 archive-products">
+		<div class="col-xs-12 col-sm-8 col-md-9 archive-products">
 
 		<?php if ( have_posts() ) : ?>
 

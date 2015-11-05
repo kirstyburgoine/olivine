@@ -28,6 +28,7 @@ function basetheme_setup() {
 	add_image_size('carousel-image', 1170, 665, TRUE);
 	add_image_size('home-image-landscape', 555, 354, TRUE);
 	add_image_size('home-image-portrait', 555, 704, TRUE);
+	add_image_size('menu-image', 230, 120, TRUE);
 
 
 

@@ -36,7 +36,7 @@
                 <?php get_template_part('includes/content','utility-nav'); ?>
             </div>
 
-
+            <?php /*
             <div class="navbar-header">
 
               <button type="button" class="navbar-toggle ss-icon ss-standard " data-toggle="collapse" data-target=".navbar-collapse">
@@ -49,9 +49,10 @@
             </div>
 
             <a class="screen-reader-text skip-link access" href="#content"><?php _e( 'Skip to content', 'twentyfourteen' ); ?></a>
+            <?php */ ?>
             
-            <div class="navbar-collapse collapse">
-            <?php
+            <div class="navbar-container">
+            <?php 
             wp_nav_menu( 
                 array( 
                 'menu' => 'top_menu',

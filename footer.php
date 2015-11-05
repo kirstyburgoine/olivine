@@ -3,6 +3,7 @@
 	<div class="container">
 
 
+			<div class="border-top"></div>
 
 	<?php
 	get_template_part('includes/content', 'footer'); ?>
