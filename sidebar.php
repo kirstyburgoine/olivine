@@ -9,7 +9,7 @@
    	//echo $termid;
 
    	// If the lookbooks category or is a page
-	if ( $termid->parent == '24' || is_page() ) :
+	if ( $termid->parent == '24' || is_buddypress() || is_page() ) :
 		
 		if ( is_active_sidebar( 'sidebar-11' ) ) : 
 			dynamic_sidebar( 'sidebar-11' ); 

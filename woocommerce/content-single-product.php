@@ -69,6 +69,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
+		// Added to hide related products of upsells are available
+		global $product;
+		$upsells = $product->get_upsells();
+
+		if (count($upsells) > 0) {
+		    remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+		}
+		// Ends added bit
 		do_action( 'woocommerce_after_single_product_summary' );
 	?>
 

@@ -294,8 +294,8 @@ function ref_woocommerce_get_sku( $sku, $instance ) {
 add_filter( 'woocommerce_get_sku', 'ref_woocommerce_get_sku', 10, 2 ); */
 
 /** to change the position of excerpt **/
-remove_action('woocommerce_single_product_summary', 'woocommerce_get_sku', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_get_sku', 6 );
+//remove_action('woocommerce_single_product_summary', 'woocommerce_get_sku', 20 );
+//add_action( 'woocommerce_single_product_summary', 'woocommerce_get_sku', 6 );
 
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);

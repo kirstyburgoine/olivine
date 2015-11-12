@@ -35,7 +35,7 @@ get_header( 'shop' ); ?>
 
 			<div class="border-bottom product-title">
 
-				<?php woocommerce_breadcrumb(); ?>
+				<?php //woocommerce_breadcrumb(); ?>
 				<?php woocommerce_template_single_title(); ?>
 
 			</div>

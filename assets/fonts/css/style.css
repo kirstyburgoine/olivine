@@ -5061,23 +5061,21 @@ nav.widgetized-nav .main-nav .sub-menu.non-wgt-menu a {
   text-transform: uppercase;
   font-weight: 600; }
 
-@media screen and (min-width: 600px) {
-  nav.widgetized-nav .main-nav li:first-child a {
-    padding-left: 0; } }
+nav.widgetized-nav .main-nav li:first-child a {
+  padding-left: 0; }
+
 @media screen and (min-width: 900px) {
   nav.widgetized-nav .main-nav .sub-menu.widgetized-menu {
-    max-width: 1140px !important; } }
+    max-width: 1170px !important; } }
 .widgetized-menu .menu-item {
   position: relative;
   background: #000;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   -webkit-transition: 10;
-  transition: 10;
-  height: auto; }
+  transition: 10; }
   .widgetized-menu .menu-item img {
     position: relative;
     margin: 0 !important;
-    padding-right: 0 !important;
     width: 100%; }
   .widgetized-menu .menu-item .menu-image-title {
     position: absolute;
@@ -5097,56 +5095,25 @@ nav.widgetized-nav .main-nav .sub-menu.non-wgt-menu a {
     transition: 10; }
     .widgetized-menu .menu-item:hover img {
       opacity: 0.5; }
-.widgetized-menu .btn {
-  width: 100%;
-  max-width: 165px;
-  background-color: #C2A45C;
-  color: #fff;
-  display: block;
-  margin: 0 auto; }
 
-.widgetized-menu-button {
-  background: #C2C2C2;
-  margin: 15px 10px; }
-  @media screen and (max-width: 899px) {
-    .widgetized-menu-button {
-      text-align: center !important;
-      color: #fff; }
-      .widgetized-menu-button .menu-item-title {
-        display: block !important; } }
-
-.widgetized-menu-button
 body .gform_wrapper label.gfield_label + div.ginput_container,
-.widgetized-menu-button
 body .gform_wrapper label.gfield_label + div.gfield_description + div.ginput_container {
   margin-bottom: 1.75em; }
-.widgetized-menu-button
 body .gform_wrapper input[type=text],
-.widgetized-menu-button
 body .gform_wrapper input[type=url],
-.widgetized-menu-button
 body .gform_wrapper input[type=email],
-.widgetized-menu-button
 body .gform_wrapper input[type=tel],
-.widgetized-menu-button
 body .gform_wrapper input[type=number],
-.widgetized-menu-button
 body .gform_wrapper input[type=password],
-.widgetized-menu-button
 body .gform_wrapper textarea {
   font-size: 14px !important; }
-.widgetized-menu-button
 body .gform_wrapper .gform_footer {
   padding-top: 0; }
-  .widgetized-menu-button
   body .gform_wrapper .gform_footer input.button,
-  .widgetized-menu-button
   body .gform_wrapper .gform_footer input[type=submit],
-  .widgetized-menu-button
   body .gform_wrapper .gform_footer input[type=image] {
     float: right;
     margin-right: 2.5%; }
-.widgetized-menu-button
 body .gform_wrapper .gform_button {
   background: #757575;
   color: #fff;
@@ -5157,7 +5124,6 @@ body .gform_wrapper .gform_button {
   line-height: 1.42857;
   margin: 0 !important;
   text-transform: uppercase; }
-  .widgetized-menu-button
   body .gform_wrapper .gform_button:hover {
     background-color: #333333;
     color: #fff; }
@@ -5182,14 +5148,11 @@ body .gform_wrapper .gform_button {
     margin-bottom: 40px; }
     @media screen and (min-width: 768px) {
       .sidebar .widget {
-        width: 100%; } }
-    @media screen and (min-width: 992px) {
-      .sidebar .widget {
         width: 48%;
         float: left; }
         .sidebar .widget:nth-child(even) {
           margin-left: 2%; } }
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 992px) {
       .sidebar .widget {
         width: 100%;
         float: none; }
@@ -5227,7 +5190,7 @@ body .gform_wrapper .gform_button {
     .sidebar .widget ul.rpwe-ul li {
       border-bottom: none !important; }
     .sidebar .widget .wl-row {
-      border-top: solid 1px #C2C2C2; }
+      border-top: solid 2px #C2C2C2; }
       .sidebar .widget .wl-row .button {
         padding: .3em 1em;
         background-color: #C2C2C2 !important;
@@ -5235,7 +5198,7 @@ body .gform_wrapper .gform_button {
         .sidebar .widget .wl-row .button:hover {
           background-color: #333333 !important; }
       .sidebar .widget .wl-row .board {
-        border-top: solid 1px #C2C2C2;
+        border-top: solid 2px #C2C2C2;
         clear: both;
         margin-bottom: 30px; }
         .sidebar .widget .wl-row .board h3 {
@@ -5274,15 +5237,6 @@ body .gform_wrapper .gform_button {
     -webkit-column-gap: 20px;
     column-count: 2;
     column-gap: 20px; }
-
-.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
-  background-color: #333333 !important; }
-
-.woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-  background-color: #C2A45C !important; }
-
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
-  background-color: #C2A45C !important; }
 
 .header-widget {
   float: right; }
@@ -5434,47 +5388,21 @@ body .gform_wrapper .gform_button {
   .entry-summary a.button:hover {
     background: #333333 !important; }
 
-.upsells .type-product,
 .related .type-product {
   border: solid 1px #C2C2C2; }
-  .upsells .type-product a,
-  .related .type-product a {
-    display: block;
-    background: #fff; }
-    .upsells .type-product a:hover,
-    .related .type-product a:hover {
-      -webkit-transition: 10;
-      transition: 10; }
-      .upsells .type-product a:hover img,
-      .related .type-product a:hover img {
-        opacity: 0.5; }
-    .upsells .type-product a h3,
-    .upsells .type-product a span.price,
-    .related .type-product a h3,
-    .related .type-product a span.price {
-      margin: 0 0.5em !important; }
-    .upsells .type-product a h3,
-    .related .type-product a h3 {
-      text-transform: uppercase;
-      color: #757575;
-      font-weight: 600;
-      padding: 1em !important; }
-      .upsells .type-product a h3:hover,
-      .related .type-product a h3:hover {
-        color: #333333;
-        text-decoration: underline; }
-    .upsells .type-product a img,
-    .related .type-product a img {
-      margin: 0 !important;
-      -webkit-transition: 10;
-      transition: 10; }
-    .upsells .type-product a:hover,
-    .related .type-product a:hover {
-      -webkit-transition: 10;
-      transition: 10; }
-      .upsells .type-product a:hover img,
-      .related .type-product a:hover img {
-        opacity: 0.5; }
+  .related .type-product h3,
+  .related .type-product span.price {
+    margin: 0 0.5em !important; }
+  .related .type-product h3 {
+    text-transform: uppercase;
+    color: #757575;
+    font-weight: 600;
+    padding: 1em !important; }
+    .related .type-product h3:hover {
+      color: #333333;
+      text-decoration: underline; }
+  .related .type-product img {
+    margin: 0 !important; }
 
 /* Product Categories in page template */
 .page-template-template-full-width-page .woocommerce ul.products li.product {
@@ -5555,7 +5483,7 @@ body .gform_wrapper .gform_button {
 .woocommerce-page .archive-products ul.products li.product,
 .woocommerce .archive-products ul.products li.product {
   float: left;
-  margin: 0 2% 1.2em 0 !important;
+  margin: 0 1.2em 1.2em 0 !important;
   padding: 0;
   position: relative;
   width: 48% !important; }
@@ -5566,10 +5494,6 @@ body .gform_wrapper .gform_button {
     .woocommerce-page .archive-products ul.products li.product,
     .woocommerce .archive-products ul.products li.product {
       width: 32% !important; } }
-  @media screen and (min-width: 1200px) {
-    .woocommerce-page .archive-products ul.products li.product,
-    .woocommerce .archive-products ul.products li.product {
-      margin: 0 1.2em 1.2em 0 !important; } }
   .woocommerce-page .archive-products ul.products li.product a,
   .woocommerce .archive-products ul.products li.product a {
     display: block;
@@ -6210,10 +6134,8 @@ body {
 
 .product-search {
   top: 6px !important;
-  left: auto !important;
-  width: 175px;
-  margin: 0 auto; }
-  @media screen and (min-width: 1200px) {
+  width: 175px; }
+  @media screen and (min-width: 768px) {
     .product-search {
       float: right;
       clear: right; } }
@@ -6303,9 +6225,6 @@ body {
           .utility-nav-container ul.buttons li a.sign-in:hover {
             background-color: #333333; }
 
-@media screen and (min-width: 992px) {
-  .site-navigation .navbar-container {
-    border-bottom: solid 1px #C2C2C2; } }
 @media screen and (min-width: 768px) {
   .site-navigation .navbar-collapse {
     padding-left: 0 !important;
@@ -6326,7 +6245,7 @@ body {
 
 .carousel .carousel-content {
   position: absolute;
-  z-index: 50;
+  z-index: 800;
   width: 70%;
   left: 15%;
   top: 15%;

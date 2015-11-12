@@ -384,7 +384,7 @@ body {
 
 		.wl-row { // Boards in Lookbook area
 
-			border-top: solid 2px $gray_76;
+			border-top: solid 1px $gray_76;
 
 			.button {
 				padding: .3em 1em;
@@ -397,7 +397,7 @@ body {
 			}
 
 			.board {
-				border-top: solid 2px $gray_76;
+				border-top: solid 1px $gray_76;
 				clear: both;
 				margin-bottom: 30px;
 
@@ -472,9 +472,16 @@ body {
 
 }
 
+// Overrides price slider default colours
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
+	background-color: $gray_20!important;
+}
+
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range { background-color: $brand-primary!important; }
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle { background-color: $brand-primary!important; }
 
 
-
+// Original Request a Consultation button
 .header-widget {
 	float: right;
 
@@ -707,27 +714,46 @@ body {
 	}
 }
 
-
+.upsells,
 .related {
 	.type-product {
 		border: solid 1px $gray_76;
 
-		h3,
-		span.price { margin: 0 0.5em!important; }
-
-		h3 {
-			text-transform: uppercase;
-			color: $gray_46;
-			font-weight: 600;
-			padding: 1em!important;
+		a { 
+			display: block;
+			background: $white;
 
 			&:hover { 
-				color: $gray_20;
-				text-decoration: underline;
+				@include transition(10);
+				img { opacity: 0.5;  }
+			}
+			
+
+			h3,
+			span.price { margin: 0 0.5em!important; }
+
+			h3 {
+				text-transform: uppercase;
+				color: $gray_46;
+				font-weight: 600;
+				padding: 1em!important;
+
+				&:hover { 
+					color: $gray_20;
+					text-decoration: underline;
+				}
+			}
+
+			img { 
+				margin:0!important; 
+				@include transition(10);
+			}
+
+			&:hover { 
+				@include transition(10);
+				img { opacity: 0.5;  }
 			}
 		}
-
-		img { margin:0!important; }
 
 	}
 }

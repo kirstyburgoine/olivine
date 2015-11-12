@@ -34,7 +34,7 @@ get_header( 'shop' ); ?>
 
 
 
-		<?php woocommerce_breadcrumb(); ?>
+		<?php //woocommerce_breadcrumb(); ?>
 		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 
