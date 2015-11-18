@@ -607,7 +607,55 @@ body {
 .woocommerce div.product p.price, 
 .woocommerce div.product span.price { color: $gray-dark!important; }
 
+// Change color of notices and remove icons
+.single-product,
+.archive,
+.page {
+
+	.woocommerce {
+		.woocommerce-error, 
+		.woocommerce-info,
+		.woocommerce-message {
+			border-top-color: $gray_20!important;
+			padding: 1em 2em!important;
+		}
+
+		.woocommerce-error:before, 
+		.woocommerce-info:before, 
+		.woocommerce-message:before {
+			content: ""!important;
+		}
+	}
+}
+
+.single-product,
+.archive,
+.page {
+	// Without page classes as too specific to override some 
+	&.woocommerce {
+
+		.woocommerce-info {
+			border-top-color: $gray_20!important;
+			padding: 1em 2em!important;
+		}
+
+
+		.woocommerce-info:before {
+			content: ""!important;
+		}
+	}
+
+}
+
+#wl-wrapper {
+	// We don't need the message saying how the board would look
+	.woocommerce-info { display: none; }
+}
 //-------------------------------------------------------------------
+
+.single-product {
+	.product_meta { display: none; }
+}
 
 .group_table {
 	.label { 
@@ -946,6 +994,33 @@ body {
 	}
 }
 
+
+// -------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------------------------------
+/* Wishlists / My Boards Stuff */
+
+// Hide the board URL That displays below the title
+.wl-share-url { display: none; }
+
+.page {
+	.woocommerce {
+
+		// Change red cross to grey
+		a.remove { 
+
+			color:$gray_20!important;
+		
+			&:hover{
+				color:#fff!important;
+				background:$gray_20;
+			}
+		}
+
+		.single_edit_button {
+			margin-top: 0.5em!important;
+		}
+	}
+}
 // -------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------
 /* Cart that displays on hover*/

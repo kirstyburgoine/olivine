@@ -69,7 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
-		// Added to hide related products of upsells are available
+		// Added to hide related products if upsells are available
 		global $product;
 		$upsells = $product->get_upsells();
 

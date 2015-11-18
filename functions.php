@@ -51,10 +51,14 @@ endif; // basetheme_setup
 add_action( 'after_setup_theme', 'basetheme_setup' );
 
 
-
 require_once('wp_bootstrap_navwalker.php');
 
 
+// Include additional Wishlist files so they don't get overwritten when the plugin is updated.
+include (ABSPATH . '/wp-content/plugins/woocommerce-wishlists/shortcodes/widget-shortcodes-init.php');
+
+// Remember templates/edit-my-list.php has bulk options removed and added edit button on line 208
+// templates view-a-list.php & view-list-grid.pph has edit button on line 194 & 215
 
 // ----------------------
 // Enqueue scripts and styles for the front end.
@@ -185,13 +189,17 @@ function wpbeginner_numeric_posts_nav() {
 
 
 add_action( 'after_setup_theme', 'woocommerce_support' );
+
 function woocommerce_support() {
+
     add_theme_support( 'woocommerce' );
+
 }
 
 
 
 	if(function_exists('woocommerce_new_styles')){
+
         $default_colors = get_option('woocommerce_frontend_css_colors');
         /*
         Defaults are: 
@@ -218,6 +226,18 @@ function woocommerce_support() {
 // -----------------------------------------------------------------------------
 // -----------------------------------------------------------------------------
 /* Shopping cart functions */
+
+// Cart - Basket Text
+function wpa_change_my_basket_text( $translated_text, $text, $domain ){
+    if( $domain == 'woothemes' && $translated_text == 'Basket' )
+        $translated_text = 'Bag:';
+    return $translated_text;
+}
+add_filter( 'gettext', 'wpa_change_my_basket_text', 10, 3 );
+
+
+
+
 function vc_woocommerce_cart_dropdown() {
 	global $woocommerce;
 	$cart_subtotal = $woocommerce->cart->get_cart_subtotal();
@@ -247,7 +267,7 @@ function vc_woocommerce_header_cart_fragments( $fragments ) {
 
 	ob_start(); ?>
 
-	<a class='cart_dropdown_link' href='<?php echo $link; ?>'><span><?php _e('Basket', 'vc') ?></span> <span class='count'>(<?php echo $cart_items_count; ?>)</span></a>
+	<a class='cart_dropdown_link' href='<?php echo $link; ?>'><span><?php _e('Bag', 'vc') ?></span> <span class='count'>(<?php echo $cart_items_count; ?>)</span></a>
 
 	<?php //echo $woocommerce->cart->cart_contents_count; ?>
 
@@ -297,18 +317,32 @@ add_filter( 'woocommerce_get_sku', 'ref_woocommerce_get_sku', 10, 2 ); */
 //remove_action('woocommerce_single_product_summary', 'woocommerce_get_sku', 20 );
 //add_action( 'woocommerce_single_product_summary', 'woocommerce_get_sku', 6 );
 
+// Move WooCommerce price
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 8 );
 
 add_filter( 'woocommerce_variable_free_price_html',  'hide_free_price_notice' );
 add_filter( 'woocommerce_free_price_html',           'hide_free_price_notice' );
 add_filter( 'woocommerce_variation_free_price_html', 'hide_free_price_notice' );
+/**
+ * Hides the 'Free!' price notice
+ */
+function hide_free_price_notice( $price ) {
  
+  return '0.00';
+}
+
+ 
+
  // -----------------------------------------------------------------------------
 /**
 * Returns max price for grouped products
-**/
+
 function wc_grouped_price_html( $price, $product ) {
 	$all_prices = array();
 
@@ -327,14 +361,9 @@ function wc_grouped_price_html( $price, $product ) {
 	return $price;
 }
 add_filter( 'woocommerce_grouped_price_html', 'wc_grouped_price_html', 10, 2 );
+**/
 
-/**
- * Hides the 'Free!' price notice
- */
-function hide_free_price_notice( $price ) {
- 
-  return '0.00';
-}
+
 // Disable Reviews tab
 
 add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );

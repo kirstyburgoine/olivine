@@ -5365,6 +5365,44 @@ body .gform_wrapper .gform_button {
 .woocommerce div.product span.price {
   color: #333333 !important; }
 
+.single-product .woocommerce .woocommerce-error,
+.single-product .woocommerce .woocommerce-info,
+.single-product .woocommerce .woocommerce-message,
+.archive .woocommerce .woocommerce-error,
+.archive .woocommerce .woocommerce-info,
+.archive .woocommerce .woocommerce-message,
+.page .woocommerce .woocommerce-error,
+.page .woocommerce .woocommerce-info,
+.page .woocommerce .woocommerce-message {
+  border-top-color: #333333 !important;
+  padding: 1em 2em !important; }
+.single-product .woocommerce .woocommerce-error:before,
+.single-product .woocommerce .woocommerce-info:before,
+.single-product .woocommerce .woocommerce-message:before,
+.archive .woocommerce .woocommerce-error:before,
+.archive .woocommerce .woocommerce-info:before,
+.archive .woocommerce .woocommerce-message:before,
+.page .woocommerce .woocommerce-error:before,
+.page .woocommerce .woocommerce-info:before,
+.page .woocommerce .woocommerce-message:before {
+  content: "" !important; }
+
+.single-product.woocommerce .woocommerce-info,
+.archive.woocommerce .woocommerce-info,
+.page.woocommerce .woocommerce-info {
+  border-top-color: #333333 !important;
+  padding: 1em 2em !important; }
+.single-product.woocommerce .woocommerce-info:before,
+.archive.woocommerce .woocommerce-info:before,
+.page.woocommerce .woocommerce-info:before {
+  content: "" !important; }
+
+#wl-wrapper .woocommerce-info {
+  display: none; }
+
+.single-product .product_meta {
+  display: none; }
+
 .group_table .label {
   color: #333333;
   font-size: 14px; }
@@ -5599,6 +5637,18 @@ body .gform_wrapper .gform_button {
 
 .woocommerce div.product h1.product_title {
   font-size: 30px; }
+
+/* Wishlists / My Boards Stuff */
+.wl-share-url {
+  display: none; }
+
+.page .woocommerce a.remove {
+  color: #333333 !important; }
+  .page .woocommerce a.remove:hover {
+    color: #fff !important;
+    background: #333333; }
+.page .woocommerce .single_edit_button {
+  margin-top: 0.5em !important; }
 
 /* Cart that displays on hover*/
 .woocommerce .dropdown_widget_cart,
