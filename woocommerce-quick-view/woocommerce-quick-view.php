@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WooCommerce Quick View
+Plugin Name: WooCommerce Quick View Amended by Kirsty
 Plugin URI: http://woothemes.com/woocommerce
 Description: Let customers quick view products and add them to their cart from a lightbox. Supports variations. Requires WC 2.0+
 Version: 1.1.4
@@ -145,7 +145,7 @@ if ( is_woocommerce_active() ) {
 					case 'thumbnail' :
 						
 							$selector = "'a.quick-view-image'";
-							if (is_shop() || is_product_category() ) : 
+							if ( is_shop() || is_product_category() || is_product_tag() || is_product() ) : 
 								add_filter( 'the_permalink', array( $this, 'get_quick_view_url' ) );
 							endif;
 						

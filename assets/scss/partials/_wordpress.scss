@@ -653,9 +653,7 @@ body {
 }
 //-------------------------------------------------------------------
 
-.single-product {
-	.product_meta { display: none; }
-}
+
 
 .group_table {
 	.label { 
@@ -700,7 +698,11 @@ body {
 .woocommerce button.button, 
 .woocommerce input.button {
 	border-radius: 0!important;
+
+	&::after { content: ""!important; }
 }
+
+.woocommerce .woocommerce-message .button::after { content: ""!important; }
 
 .add_to_cart_button {
 	width: 100%;
@@ -984,15 +986,88 @@ body {
 	}
 }
 
-// Original product title, smaller
+
 .woocommerce {
+	
 	div.product {
+
+		// Original product title, smaller
 		h1.product_title {
 			font-size: $font-size-h2;
 
 		}
+	
+
+		&.product-type-mix-and-match {
+			// Hides the top price when on MNM because it displays 0
+			p.price { display: none; }
+
+			.mnm_button_wrap {
+				// Show MNM price because that updates based on selection
+				p.price { 
+					display: block; 
+					text-align: right;
+					padding: 10px 15px;
+					background: $white_smoke;
+
+					::before { content: "Subtotal: "}
+				}
+
+			}
+		}
+
+
+
+		// Forces add to cart button below quantity on simple products
+		form.cart {
+			.button {
+				clear: left;
+				margin: 1em 0 0 0;
+			}
+		}
+
 	}
+	// display the price in quick view for simple products but not mixed products
+	// Options of r this in quick-view.php
+	&.simple {
+		p.price { display: block; }
+	}
+	&.mix {
+		p.price { display: none; }
+	}	
+
 }
+
+	// hides categories, tags, SKU etc.
+	.single-product {
+		.product_meta { display: none; }
+	}
+
+	// Not specific to &.product-type-mix-and-match  because of quickview.
+	.mnm_table {
+		.product-thumbnail, 
+		.product-name, 
+		.product-quantity, 
+		.container-quantity,
+		.product-price {
+			vertical-align: middle!important;
+			min-width: 32px;
+			padding: 6px 12px!important;
+		}
+
+		.product-price {
+			min-width: 75px;
+		}
+
+	}
+
+	.mnm_button_wrap {
+	// Hides the wierd quantity box for MaM products
+	// Not specific to &.product-type-mix-and-match  because of quickview.
+			.quantity {
+				.qty { display: none; }
+			}
+	}
 
 
 // -------------------------------------------------------------------------------------------------------------
@@ -1001,7 +1076,10 @@ body {
 
 // Hide the board URL That displays below the title
 .wl-share-url { display: none; }
+#wl-wrapper .wl-table .product-purchase .button:first-child { margin-bottom: 0.5em; }
 
+
+.dropdown_widget_cart ul.cart_list li
 .page {
 	.woocommerce {
 
@@ -1077,7 +1155,17 @@ body {
   ul.cart_list li { display: block; clear: left; padding: .5em; margin-bottom: .5em; }
   ul.cart_list li:nth-child(even) { }
   ul.cart_list li a { padding: 0; font-weight: 400; }
-  ul.cart_list li a.remove { float: left; margin-right: 1em; }
+  ul.cart_list li a.remove { 
+  	float: left; 
+  	color:$gray_20!important;
+  	font-size: 1em;
+  	height: 1em;
+  	width: 1em;
+		&:hover{
+			color:#fff!important;
+			background:$gray_20;
+		}
+	}
   ul.cart_list li img { width: 50px; max-width: 50px; height: auto; float: left; margin-right: 0.5em; }
   ul.cart_list .quantity {  }
 

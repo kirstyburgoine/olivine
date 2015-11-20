@@ -13,4 +13,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-wc_get_template( 'lookbook-product.php' );
+	$term = get_queried_object()->term_id;
+   	$termid = get_term($term, 'product_cat' );
+
+   	//echo $termid;
+
+   	// If the lookbooks category get different layout with myboards and no filters
+	if ( $termid->parent == '24' ) :
+		wc_get_template( 'lookbook-product.php' );
+
+		// else treat these pages as standard shop archives
+	else : 
+		wc_get_template( 'archive-product.php' );
+	endif;

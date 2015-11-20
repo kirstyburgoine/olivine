@@ -9,9 +9,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product, $post, $woocommerce;
 
+if ( $product->is_type( 'simple' ) ||  $product->is_type( 'variable' ) ) :
+	$qv_class = "simple";
+else :
+	$qv_class = "mix";
+endif; 
+
 do_action( 'wc_quick_view_before_single_product' );
 ?>
-<div class="woocommerce quick-view">
+<div class="woocommerce quick-view <?php echo $qv_class; ?>">
 
 	<div class="product">
 		<div class="quick-view-image images">
@@ -40,3 +46,5 @@ do_action( 'wc_quick_view_before_single_product' );
 		</div>
 	</div>
 </div>
+
+

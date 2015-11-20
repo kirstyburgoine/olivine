@@ -55,7 +55,7 @@ get_header( 'shop' ); ?>
 
 					</div>
 
-					<div class="col-xs-12 col-md-8 col-md-9 archive-products">
+					<div class="col-xs-12 col-md-8 col-md-9 archive-products woocommerce">
 
 					<?php
 						/**

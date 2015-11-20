@@ -313,7 +313,7 @@ body {
 	width: 175px;
 	margin: 0 auto; 
 
-	@media screen and (min-width: $screen-lg) {
+	@media screen and (min-width: $screen-md) {
 		float: right;
 		clear: right;
 	}
@@ -476,9 +476,20 @@ body {
 		@media screen and (min-width: $screen-md) {
 			border-bottom: solid 1px $gray_76;
 		}
+
+
+		nav.widgetized-nav {
+			.main-nav {
+				.sub-menu.non-wgt-menu li > a {
+					color: $gray_20!important;
+				}
+			}
+		}
+
 	}
 
 
+/*
 	.navbar-collapse {
 		
 		@media screen and (min-width: $screen-sm) {
@@ -515,6 +526,8 @@ body {
 			}
 		}
 	}
+
+	*/
 }
 
 

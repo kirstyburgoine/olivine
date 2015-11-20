@@ -57,8 +57,13 @@ require_once('wp_bootstrap_navwalker.php');
 // Include additional Wishlist files so they don't get overwritten when the plugin is updated.
 include (ABSPATH . '/wp-content/plugins/woocommerce-wishlists/shortcodes/widget-shortcodes-init.php');
 
-// Remember templates/edit-my-list.php has bulk options removed and added edit button on line 208
-// templates view-a-list.php & view-list-grid.pph has edit button on line 194 & 215
+// REMEMBER
+// woocommerce-wishlists/templates/edit-my-list.php has bulk options removed and added edit button on line 208
+// woocommerce-wishlists/templates/view-a-list.php & view-list-grid.pph has edit button on line 194 & 215
+// woocommerce-mix-and-match-products/templates/mnm/mnm-item.php updated on lines 55 - 69 to show individual prices for each line item
+// woocommerce-mix-and-match-products/templates/single-product/add-to-cart/mnm.php <div class="mnm_price"></div> moved from line 63 to 72
+// woocommerce-quick-view.php added  || is_product_tag() || is_product() ) : to filters on line 148
+// woocommerce-mix-and-match-products/includes/compatability/class-wc-compatability.php inserted <br /> on line 39
 
 // ----------------------
 // Enqueue scripts and styles for the front end.
@@ -228,12 +233,15 @@ function woocommerce_support() {
 /* Shopping cart functions */
 
 // Cart - Basket Text
-function wpa_change_my_basket_text( $translated_text, $text, $domain ){
-    if( $domain == 'woothemes' && $translated_text == 'Basket' )
-        $translated_text = 'Bag:';
+function my_text_strings( $translated_text, $text, $domain ) {
+    switch ( $translated_text ) {
+        case 'View Basket' :
+            $translated_text = __( 'View Bag', 'woocommerce' );
+            break;
+    }
     return $translated_text;
 }
-add_filter( 'gettext', 'wpa_change_my_basket_text', 10, 3 );
+add_filter( 'gettext', 'my_text_strings', 20, 3 );
 
 
 
@@ -318,8 +326,8 @@ add_filter( 'woocommerce_get_sku', 'ref_woocommerce_get_sku', 10, 2 ); */
 //add_action( 'woocommerce_single_product_summary', 'woocommerce_get_sku', 6 );
 
 // Move WooCommerce price
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+//add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
 
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
@@ -339,9 +347,10 @@ function hide_free_price_notice( $price ) {
 
  
 
- // -----------------------------------------------------------------------------
-/**
-* Returns max price for grouped products
+ /* -----------------------------------------------------------------------------
+//
+//Returns max price for grouped products
+**/
 
 function wc_grouped_price_html( $price, $product ) {
 	$all_prices = array();
@@ -361,7 +370,7 @@ function wc_grouped_price_html( $price, $product ) {
 	return $price;
 }
 add_filter( 'woocommerce_grouped_price_html', 'wc_grouped_price_html', 10, 2 );
-**/
+
 
 
 // Disable Reviews tab

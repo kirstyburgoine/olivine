@@ -47,7 +47,7 @@ get_header( 'shop' ); ?>
 
 	<div class="row">
 
-		<div class="col-md-12">
+		<div class="col-md-12 woocommerce">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
